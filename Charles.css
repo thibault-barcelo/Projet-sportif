@@ -1,0 +1,83 @@
+body{
+    margin:0;
+    background:#f0f0f0;
+    background: radial-gradient(circle at center, #f0f0f0, #b40000);
+}
+
+/* Bandeau global */
+.slider {
+    height: 220px;         /* hauteur totale image + texte */
+    overflow: hidden;
+    background: #ffffff00; /* transparent ou autre couleur */
+    position: relative;
+}
+
+/* Bande défilante */
+.slide-track {
+    display: flex;
+    gap: 25px;              /* espace entre chaque GP */
+    padding-left: 25px;
+    animation: scroll 45s linear infinite; /* durée plus longue = plus fluide */
+}
+
+/* Bloc image + texte */
+.slide {
+    width: 220px;           /* largeur fixe de chaque vignette */
+    flex-shrink: 0;
+    text-align: center;     /* centre le texte */
+    font-family: Arial, sans-serif;
+}
+
+/* Image */
+.slide img {
+    width: 100%;
+    height: 140px;          /* hauteur image */
+    object-fit: cover;
+    border-radius: 8px;     /* optionnel / arrondi */
+}
+
+/* Texte GP */
+.slide p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: white;             /* change si tu veux du foncé */
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Animation : largeur = (largeur slide + gap) * nombre d’éléments originaux
+   Tu as 23 GP → on calcule : 220px + 25px = 245px
+*/
+@keyframes scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(calc(-245px * 23)); }
+}
+h1{
+  text-align: center;
+  font-size: 10em;
+  font-family:  'MaPolice', Arial, sans-serif;
+}
+@font-face {
+  font-family: 'MaPolice';
+  src: url('images/Ethnocentric-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+h2{
+  text-align: center;
+  font-size: 5em;
+  font-family:  'MaPolice', Arial, sans-serif;
+}
+hr{
+  margin-top: 5vw;
+}
+.biographie{
+  display: flex;
+  margin: auto;
+  gap: 3vw;
+}
+.voiture{
+  display: flex;
+  flex-direction: row-reverse;
+
+}
